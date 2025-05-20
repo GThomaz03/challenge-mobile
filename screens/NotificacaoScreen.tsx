@@ -1,11 +1,9 @@
-// NotificationsScreen.js
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 
 const notifications = [
-  { id: '1', text: 'Moto 1 em manutenção.' },
-  { id: '2', text: 'Nova moto adicionada ao pátio.' },
-  // Adicionar mais notificações conforme necessário
+  { id: '1', text: 'Moto de placa: DDR4G6 está na zona: Manutenção.' },
+  { id: '2', text: 'Nova moto de placa: RFJ7H2 adicionada ao pátio.' },
 ];
 
 export default function NotificacaoScreen() {
@@ -27,11 +25,14 @@ export default function NotificacaoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 15,
+    backgroundColor: '#232323'
   },
   notification: {
     padding: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#ececec',
+    backgroundColor: '#9de695',
+    borderRadius: 10,
+    marginTop: 5
   },
 });

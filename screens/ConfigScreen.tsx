@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Alert,
   TextInput,
-  ScrollView,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
@@ -41,8 +40,6 @@ export default function ConfigScreen() {
       const lista: Moto[] = dados ? JSON.parse(dados) : [];
       lista.push(novaMoto);
       await AsyncStorage.setItem('motos', JSON.stringify(lista));
-      Alert.alert('Sucesso', 'Moto cadastrada com sucesso!');
-      // limpar os campos
       setModelo('');
       setPlaca('');
       setStatus('');
@@ -51,9 +48,9 @@ export default function ConfigScreen() {
     }
   };
 
+  //TO DO: arrumar a função de Logout
   const logout = async () => {
     await AsyncStorage.removeItem('logado');
-    Alert.alert('Logout', 'Você saiu da conta');
     navigation.reset({
       index: 0,
       routes: [{ name: 'Login' }],
@@ -61,7 +58,7 @@ export default function ConfigScreen() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Configurações</Text>
 
       <Button title="Sair" onPress={logout} />
@@ -88,7 +85,7 @@ export default function ConfigScreen() {
       />
 
       <Button title="Salvar Moto" onPress={salvarMoto} />
-    </ScrollView>
+    </View>
   );
 }
 
@@ -96,18 +93,20 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingBottom: 60,
-    backgroundColor: '#fff',
+    backgroundColor: '#232323',
     flexGrow: 1,
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#ddd',
   },
   sectionTitle: {
     fontSize: 18,
     marginTop: 30,
     marginBottom: 10,
+    color: '#ddd',
   },
   input: {
     borderWidth: 1,
@@ -115,5 +114,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
+    color: '#ddd',
   },
 });

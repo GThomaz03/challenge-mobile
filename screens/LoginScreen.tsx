@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 
-type Props = {
+interface Props {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
 };
 
@@ -46,13 +46,25 @@ export default function LoginScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20 },
-  title: { fontSize: 24, marginBottom: 20, textAlign: 'center' },
+  container: { 
+    flex: 1,
+    justifyContent: 'center', 
+    padding: 20,
+    backgroundColor: '#232323',
+  },
+  title: { 
+    fontSize: 30,
+    marginBottom: 40,
+    color: '#fff', 
+    textAlign: 'center' 
+  },
   input: {
     borderWidth: 1,
     borderColor: '#aaa',
+    color: '#fff',
     borderRadius: 8,
     padding: 10,
     marginBottom: 15,
+    backgroundColor: '#383838'
   },
 });

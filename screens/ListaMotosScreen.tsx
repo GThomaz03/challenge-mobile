@@ -45,15 +45,6 @@ export default function ConfigScreen() {
     carregarMotos();
   }, []);
 
-  const logout = async () => {
-    await AsyncStorage.removeItem('logado');
-    Alert.alert('Logout', 'Você saiu da conta');
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Login' }],
-    });
-  };
-
   const motosFiltradas = motos.filter((m) =>
     m.placa.toLowerCase().includes(filtro.toLowerCase())
   );
@@ -85,6 +76,7 @@ export default function ConfigScreen() {
             onPress={() => abrirDetalhe(item)}
           >
             <Text style={styles.placa}>{item.placa}</Text>
+            <p style={styles.text}>Ver detalhes</p>
           </TouchableOpacity>
         )}
         ListEmptyComponent={
@@ -98,24 +90,51 @@ export default function ConfigScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 15 },
-  sectionTitle: { fontSize: 18, marginTop: 20, marginBottom: 10 },
+  container: {
+    flex: 1, 
+    padding: 20,
+    backgroundColor: '#232323',
+    color: '#ddd',
+  },
+  title: {
+    fontSize: 22, 
+    fontWeight: 'bold', 
+    marginBottom: 15,
+    color: '#ddd',
+  },
+  sectionTitle: {
+    fontSize: 18, 
+    marginTop: 20, 
+    marginBottom: 10,
+    color: '#ddd',
+  },
   input: {
     borderWidth: 1,
     borderColor: '#aaa',
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
+    color: '#ddd',
   },
   item: {
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#9de695',
     padding: 15,
     marginBottom: 10,
     borderRadius: 6,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '65%'
+  },
+  text: {
+    fontSize: 12,
+    color: '#232323'
   },
   placa: {
     fontSize: 16,
     fontWeight: 'bold',
+    fontFamily: 'Arial',
+    color: '#232323',
   },
 });

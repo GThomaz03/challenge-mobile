@@ -1,4 +1,5 @@
-// types.ts
+import { RouteProp } from "@react-navigation/native";
+
 export type RootStackParamList = {
   Login: undefined;
   MainApp: undefined;
@@ -9,9 +10,10 @@ export type RootStackParamList = {
       status: string;
     };
   };
-  ListaMotos: undefined; // ✅ <- adicione isso se quiser uma tela de lista separada
+  ListaMotos: undefined;
 };
 
+export type DetalheRouteProp = RouteProp<RootStackParamList, 'DetalheMoto'>;
 
 type Moto = {
   id: string; // UUID

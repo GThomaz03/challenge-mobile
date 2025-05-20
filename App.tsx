@@ -5,8 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppTabs from './AppTabs';
 import LoginScreen from './screens/LoginScreen';
 import DetalheMotoScreen from './screens/DetalheMotoScreen';
-import { RootStackParamList } from './types';
-
 
 const {Navigator, Screen} = createNativeStackNavigator();
 

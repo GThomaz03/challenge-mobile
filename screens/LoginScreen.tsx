@@ -13,7 +13,7 @@ export default function LoginScreen({ navigation }: Props) {
   const [senha, setSenha] = useState('');
 
   const fazerLogin = async () => {
-    if (usuario === 'Gabriel' && senha === 'Abacaxi1') {
+    if (usuario === 'Admin' && senha === '1234') {
       await AsyncStorage.setItem('logado', 'true');
       navigation.reset({
         index: 0,

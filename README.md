@@ -10,7 +10,7 @@ Este projeto tem como objetivo desenvolver uma solução completa e escalável p
 Para executar o programa localmente siga o passo a passo:
  - Clone o repositório
      - ```
-       git clone https://gitub.com/GThomaz03/challenge-mobile
+       git clone https://github.com/GThomaz03/challenge-mobile
        ```
  - Acesse o diretório clonado
      - ```
@@ -25,7 +25,7 @@ Para executar o programa localmente siga o passo a passo:
        npm run web
        ```
        ou
-       ```
+     - ```
        npm run android
        ```
   - Utilize os seguintes dados:

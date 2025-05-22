@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
+import Cores from '../Cores';
 
 const notifications = [
   { id: '1', text: 'Moto de placa: DDR4G6 está na zona: Manutenção.' },
@@ -26,12 +27,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    backgroundColor: '#232323'
+    backgroundColor: Cores.background,
   },
   notification: {
     padding: 15,
     borderBottomWidth: 1,
-    backgroundColor: '#9de695',
+    backgroundColor: Cores.primary,
+    borderColor: Cores.border,
     borderRadius: 10,
     marginTop: 5
   },

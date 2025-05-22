@@ -6,6 +6,7 @@ import NotificacaoScreen from './screens/NotificacaoScreen';
 import ConfigScreen from './screens/ConfigScreen';
 import ListaMotosScreen from './screens/ListaMotosScreen';
 import {Feather, Ionicons, Octicons } from '@expo/vector-icons';
+import Cores from './Cores';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
@@ -14,35 +15,37 @@ export default function AppTabs() {
     <Navigator screenOptions={{
       headerShown: false, 
       tabBarStyle:{
-        backgroundColor: "#2c2c2c",
+        backgroundColor: Cores.barBackground,
         borderWidth: 0,
         },
+      tabBarActiveTintColor: Cores.barTintColorActive,
+      tabBarInactiveTintColor: Cores.barTintColorInactive,
       animation: 'shift'
         }} >
-      <Screen name="Home" component={HomeScreen} options={{
+      {/* <Screen name="Home" component={HomeScreen} options={{
         title: "Home",
         tabBarIcon: ()=>
           <Feather name="home" size={24} color="black" />
-      }} />
+      }} /> */}
       <Screen name="Mapa" component={MapaScreen} options={{
         title: "Mapa",
-        tabBarIcon: ()=>
-          <Feather name="map" size={24} color="black" />
+        tabBarIcon: ({color})=>
+          <Feather name="map" size={24} color={color} />
       }} />
       <Screen name="ListaMotos" component={ListaMotosScreen} options={{
         title: "Motos",
-        tabBarIcon: ()=>
-          <Feather name="list" size={24} color="black" />
+        tabBarIcon: ({color})=>
+          <Feather name="list" size={24} color={color} />
       }} />
       <Screen name="Notificacao" component={NotificacaoScreen} options={{
         title: "Notificações",
-        tabBarIcon: ()=>
-          <Ionicons name="notifications-outline" size={24} color="black" />
+        tabBarIcon: ({color})=>
+          <Ionicons name="notifications-outline" size={24} color={color} />
       }} />
       <Screen name="Config" component={ConfigScreen} options={{
         title: "Configurações",
-        tabBarIcon: ()=>
-          <Octicons name="gear" size={24} color="black" />
+        tabBarIcon: ({color})=>
+          <Octicons name="gear" size={24} color={color} />
       }} />
     </Navigator>
   );

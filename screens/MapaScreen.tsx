@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import Cores from '../Cores';
 
 export default function MapaScreen() {
   return (
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#232323',
+    backgroundColor: Cores.background,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: 300,
     width: 300,
     display: 'flex',
-    backgroundColor: '#999',
+    backgroundColor: '#9de695',
     justifyContent: 'center',
     alignItems: 'center'
   },

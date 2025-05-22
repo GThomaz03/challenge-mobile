@@ -11,6 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
+import Cores from '../Cores';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'MainApp'>;
 
@@ -61,6 +62,7 @@ export default function ConfigScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Configurações</Text>
 
+      <Text style={styles.sectionTitle}>Sair da conta</Text>
       <Button title="Sair" onPress={logout} />
 
       <Text style={styles.sectionTitle}>Cadastrar nova moto</Text>
@@ -93,27 +95,28 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingBottom: 60,
-    backgroundColor: '#232323',
+    backgroundColor: Cores.background,
+    flex: 1,
     flexGrow: 1,
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#ddd',
+    color: Cores.text,
   },
   sectionTitle: {
     fontSize: 18,
     marginTop: 30,
     marginBottom: 10,
-    color: '#ddd',
+    color: Cores.textSecondary,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#999',
+    borderColor: Cores.inputBorder,
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
-    color: '#ddd',
+    color: Cores.inputText,
   },
 });

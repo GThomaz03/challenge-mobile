@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { DetalheRouteProp } from '../types';
+import Cores from '../Cores';
 
 
 export default function DetalheMotoScreen() {
@@ -25,18 +26,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 15,
-    backgroundColor: '#232323',
+    backgroundColor: Cores.background,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 50,
     textAlign: 'center',
+    color: Cores.text,
   },
   infos: {
-    backgroundColor: '#383838',
+    backgroundColor: '#dfdfdf',
     borderWidth: 1,
-    borderColor: "#121212",
+    borderColor: Cores.border,
     borderRadius: 15,
     padding: 20,
   },

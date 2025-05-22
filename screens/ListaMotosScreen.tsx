@@ -13,6 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
+import Cores from '../Cores';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'ListaMotos'>;
 
@@ -59,7 +60,7 @@ export default function ConfigScreen() {
 
       <Button title="Atualizar Lista" onPress={carregarMotos} color="#007AFF" />
 
-      <Text style={styles.sectionTitle}>Buscar moto por placa</Text>
+      <Text style={styles.TituloSessao}>Buscar moto por placa</Text>
       <TextInput
         style={styles.input}
         placeholder="Digite a placa"
@@ -93,31 +94,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
     padding: 20,
-    backgroundColor: '#232323',
-    color: '#ddd',
+    backgroundColor: Cores.background,
+    color: Cores.text,
   },
   title: {
     fontSize: 22, 
     fontWeight: 'bold', 
     marginBottom: 15,
-    color: '#ddd',
+    color: Cores.textSecondary,
   },
-  sectionTitle: {
-    fontSize: 18, 
-    marginTop: 20, 
+  TituloSessao: {
+    fontSize: 18,
+    marginTop: 20,
     marginBottom: 10,
-    color: '#ddd',
+    color: Cores.textSecondary,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#aaa',
+    borderColor: Cores.inputBorder,
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
-    color: '#ddd',
+    color: Cores.inputText,
   },
   item: {
-    backgroundColor: '#9de695',
+    backgroundColor: Cores.primary,
     padding: 15,
     marginBottom: 10,
     borderRadius: 6,
@@ -129,12 +130,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 12,
-    color: '#232323'
+    color: Cores.textSecondary
   },
   placa: {
     fontSize: 16,
     fontWeight: 'bold',
     fontFamily: 'Arial',
-    color: '#232323',
+    color: Cores.text,
   },
 });

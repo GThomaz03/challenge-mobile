@@ -3,6 +3,7 @@ import { View, TextInput, Button, Text, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
+import Cores from '../Cores';
 
 interface Props {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
@@ -40,7 +41,7 @@ export default function LoginScreen({ navigation }: Props) {
         value={senha}
         onChangeText={setSenha}
       />
-      <Button title="Entrar" onPress={fazerLogin} />
+      <Button title="Entrar" onPress={fazerLogin} color={Cores.buttonPrimaryBackground} />
     </View>
   );
 }
@@ -50,21 +51,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center', 
     padding: 20,
-    backgroundColor: '#232323',
+    backgroundColor: Cores.background,
   },
   title: { 
     fontSize: 30,
     marginBottom: 40,
-    color: '#fff', 
+    color: Cores.text,
     textAlign: 'center' 
   },
   input: {
     borderWidth: 1,
-    borderColor: '#aaa',
-    color: '#fff',
+    borderColor: Cores.inputBorder,
+    color: Cores.inputText,
     borderRadius: 8,
     padding: 10,
     marginBottom: 15,
-    backgroundColor: '#383838'
+    backgroundColor: Cores.inputBackground
   },
 });

@@ -29,5 +29,5 @@ Para executar o programa localmente siga o passo a passo:
        npm run android
        ```
   - Utilize os seguintes dados:
-      - Usuário: admin
+      - Usuário: Admin
       - Senha: 1234
